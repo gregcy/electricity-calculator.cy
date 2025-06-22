@@ -3,7 +3,7 @@
 @endphp
 
 <!DOCTYPE html>
-<html class="bg-gray-100 h-screen flex flex-col" lang="{{ str_replace('_', '-', $currentLocale ) }}">
+<html class="bg-white h-screen flex flex-col" lang="{{ str_replace('_', '-', $currentLocale ) }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -127,15 +127,21 @@
             </div>
         </div>
         @endisset
-        <footer class="max-w-6xl mx-auto mt-auto p-5 w-full flex flex-col md:flex-row">
-            <div class="">
-                <div class="text-sm">{{ __('Source Code') }}: <a href="https://github.com/gregcy/eacprice" target="_blank" class="underline text-blue-700">https://github.com/gregcy/eacprice</a></div>
-                <div class="text-sm">{{ __('License') }}: <a href="https://opensource.org/licenses/MIT" target="_blank" class="underline text-blue-700">{{ __('MIT') }}</a></div>
-                <div class="text-sm">{{ __('Calculator Icon') }}: Boca Tutor, <a target="_blank" class="underline text-blue-700" href="https://commons.wikimedia.org/wiki/File:Calculator_icon.svg">Calculator icon</a>, <a target="_blank" class="underline text-blue-700" href="https://creativecommons.org/licenses/by-sa/3.0/legalcode" rel="license">CC BY-SA 3.0</a> </div>
-            </div>
-            <div class="ml-0 md:ml-auto">
-                <div class="text-sm">{{ __('This site only uses first-party & strictly necessary cookies') }}</div>
-                <div class="text-sm text-right"><a href="https://greg.cy/form/contact" target="_blank" class="underline text-blue-700">{{ __('Contact') }}</a></div>
+        @isset($cost)
+        <footer class="bg-gray-100 w-full">
+        @else
+        <footer class="bg-white-100 w-full">
+        @endisset
+            <div class="max-w-6xl mx-auto mt-auto p-5 w-full flex flex-col md:flex-row">
+                <div>
+                    <div class="text-sm">{{ __('Source Code') }}: <a href="https://github.com/gregcy/electricity-calculator.cy" target="_blank" class="underline text-blue-700">https://github.com/gregcy/electricity-calculator.cy</a></div>
+                    <div class="text-sm">{{ __('License') }}: <a href="https://opensource.org/licenses/MIT" target="_blank" class="underline text-blue-700">{{ __('MIT') }}</a></div>
+                    <div class="text-sm">{{ __('Calculator Icon') }}: Boca Tutor, <a target="_blank" class="underline text-blue-700" href="https://commons.wikimedia.org/wiki/File:Calculator_icon.svg">Calculator icon</a>, <a target="_blank" class="underline text-blue-700" href="https://creativecommons.org/licenses/by-sa/3.0/legalcode" rel="license">CC BY-SA 3.0</a> </div>
+                </div>
+                <div class="ml-0 md:ml-auto">
+                    <div class="text-sm">{{ __('This site only uses first-party & strictly necessary cookies') }}</div>
+                    <div class="text-sm text-right"><a href="https://greg.cy/form/contact" target="_blank" class="underline text-blue-700">{{ __('Contact') }}</a></div>
+                </div>
             </div>
         </footer>
     </body>
