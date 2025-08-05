@@ -39,6 +39,7 @@ class Tariff extends Model
         'supply_subsidy_third',
         'source',
         'source_name',
+        'user_id',
     ];
 
     /**
