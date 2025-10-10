@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Validation\ValidationException;
 use App\Classes\EacCosts;
 use App\Traits\EACTrait;
 use Illuminate\Http\Request;
@@ -31,7 +32,7 @@ class GetCurrentRate extends Controller
                     'creditUnits' => 'boolean',
                 ]
             );
-        } catch (\Illuminate\Validation\ValidationException $e) {
+        } catch (ValidationException $e) {
             return response()->json(['error' => $e->getMessage()], 400);
         }
         $tariffCode = request('tariffCode', '01');

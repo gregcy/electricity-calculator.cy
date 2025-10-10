@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use DateTime;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -17,7 +18,7 @@ class Adjustment extends Model
     /**
      * The attributes that are mass assignable.
      *
-     * @var array<int, string, \DateTime>
+     * @var array<int, string, DateTime>
      */
     protected $fillable = [
         'start_date',

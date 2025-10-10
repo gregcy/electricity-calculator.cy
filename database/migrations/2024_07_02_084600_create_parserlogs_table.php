@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('type')->nullable()->default(null);
             $table->string('status')->nullable()->default(null);
-            $table->string('message')->nullable()->default(null);
+            $table->string('message', 2000)->nullable()->default(null);
             $table->timestamps();
         });
     }

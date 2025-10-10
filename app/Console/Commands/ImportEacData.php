@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use Exception;
 use Illuminate\Console\Command;
 use App\Classes\EacImporter;
 use App\Models\Parserlog;
@@ -44,7 +45,7 @@ class ImportEacData extends Command
                 'status' => 'success',
                 'message' => 'Fuel Adjustment data parsed from EAC website successfully.'
             ]);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             $this->error('An error occurred while parsing the EAC Fuel Adjustment data from the site: ' . $e->getMessage());
             Parserlog::create([
                 'type' => 'Fuel Adjustment Parse',
@@ -71,7 +72,7 @@ class ImportEacData extends Command
                 'status' => 'success',
                 'message' => $message
             ]);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             $this->error('An error occurred while importing the Fuel Adjustment data: ' . $e->getMessage());
             Parserlog::create([
                 'type' => 'EAC Import',
