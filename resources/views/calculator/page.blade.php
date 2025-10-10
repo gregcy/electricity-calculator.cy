@@ -42,31 +42,31 @@
         @endif
         <!-- Scripts -->
         <script type="application/ld+json">
-            {
-                "@context": "http://schema.org",
-                "@type": "TechArticle",
-                "headline": "Electricity Cost Calculator in Cyprus",
-                "description": "Calculate your electricity cost in Cyprus with our user-friendly online calculator. Optimize energy usage and make informed decisions to manage your utility expenses.",
-                "datePublished": "2023-12-26T12:00:00+02:00",
-                "author": {
-                    "@type": "Person",
-                    "name": "Greg Andreou",
-                    "url": "https://greg.cy/"
-                },
-                "image": "https://electricity-calculator.cy/images/calculator-full.png",
-                "publisher": {
-                    "@type": "Person",
-                    "name": "Greg Andreou",
-                    "logo": {
-                    "@type": "ImageObject",
-                    "url": "https://electricity-calculator.cy/images/calculator-full.png"
-                    }
-                },
-                "mainEntityOfPage": {
-                    "@type": "WebPage",
-                    "@id": "https://electricity-calculator.cy/"
-                }
-            }
+            {!! json_encode([
+                '@context' => 'http://schema.org',
+                '@type' => 'TechArticle',
+                'headline' => 'Electricity Cost Calculator in Cyprus',
+                'description' => 'Calculate your electricity cost in Cyprus with our user-friendly online calculator. Optimize energy usage and make informed decisions to manage your utility expenses.',
+                'datePublished' => '2023-12-26T12:00:00+02:00',
+                'author' => [
+                    '@type' => 'Person',
+                    'name' => 'Greg Andreou',
+                    'url' => 'https://greg.cy/'
+                ],
+                'image' => 'https://electricity-calculator.cy/images/calculator-full.png',
+                'publisher' => [
+                    '@type' => 'Person',
+                    'name' => 'Greg Andreou',
+                    'logo' => [
+                        '@type' => 'ImageObject',
+                        'url' => 'https://electricity-calculator.cy/images/calculator-full.png'
+                    ]
+                ],
+                'mainEntityOfPage' => [
+                    '@type' => 'WebPage',
+                    '@id' => 'https://electricity-calculator.cy/'
+                ]
+            ], JSON_UNESCAPED_SLASHES) !!}
         </script>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <!-- Matomo -->

@@ -3,7 +3,7 @@
     <div class="flex flex-wrap pb-6">
         <div class="w-full md:w-auto pr-4"><span class="font-bold">{{ __('Tariff') }}:</span><span class="font-normal pl-1">{{ $values['tariff'] }}</span></div>
         @if($values['tariff'] === '01' || $values['tariff'] === '08')
-        <div class="w-full md:w-auto pr-4"><span class="font-bold">{{ __('Consumption') }}:</span><span class="font-normal pl-1">{{ $values['consumption'] }} kWh</span></span></div>
+        <div class="w-full md:w-auto pr-4"><span class="font-bold">{{ __('Consumption') }}:</span><span class="font-normal pl-1">{{ $values['consumption'] }} kWh</span></div>
         <div class="w-full md:w-auto pr-4"><span class="font-bold">{{ __('Returned Solar Power') }}:</span><span class="font-normal pl-1">{{ $values['credit-amount'] }} kWh</span></div>
         @elseif($values['tariff'] === '02')
         <div class="w-full md:w-auto pr-4"><span class="font-bold pl-4">{{ __('Consumption During Standard Period') }}:</span><span class="font-normal pl-1">{{ $values['consumption-standard'] }} kWh</span></div>
@@ -50,7 +50,7 @@
                     @if($key != 'total')
                     <td class="px-2 font-mono text-right text-sm">{{ $value->value }}</td>
                     @else
-                    <td class="px-2 font-mono font-bold text-right text-sm">{{ __($value->value) }}
+                    <td class="px-2 font-mono font-bold text-right text-sm">{{ __($value->value) }}</td>
                     @endif
                 </tr>
             @endforeach
