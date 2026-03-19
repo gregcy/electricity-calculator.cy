@@ -1,7 +1,7 @@
 <div class="p-5">
     <form id="eac-calculator" class="mb-2" method="POST" action="{{ route('calculator.calculate',['lang' => app()->getLocale()]) }}">
         @csrf
-        <fieldset class="py-4 w-100">
+        <fieldset class="py-4 w-full">
             <label for="tariff-select" id="tariff" class="text-lg font-medium pr-2 w-full block md:inline-block md:w-24">{{ __('Tariff') }}:</label>
             <select id="tariff-select" name="tariff"
                 class="inline-block grow border-gray-300 focus:border-indigo-300 focus:ring-3 focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-md w-full md:w-[340px]">
@@ -31,24 +31,24 @@
             </select>
         </fieldset>
         <fieldset id="tariff01" class="{{ (isset($values) && in_array($values['tariff'], ['01', '08'])) || !isset($values) ? 'block' : 'hidden' }}">
-            <div class="w-100">
+            <div class="w-full">
                     <label for="consumption" class="text-lg font-medium pr-20 w-full block md:inline-block md:w-96">{{ __('Consumption') }} (kWh):</label>
                 <input id="consumption" type="number" name="consumption" step="0.01" min="0" placeholder="0" value="{{ old('consumption', $values['consumption'] ?? 0) }}"
                 class="inline-block grow border-gray-300 focus:border-indigo-300 focus:ring-3 focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-md w-full md:w-[311px]">
             </div>
-            <div class="w-100 py-4">
+            <div class="w-full py-4">
                     <label for="credit-amount" class="text-lg font-medium pr-4 w-full block md:inline-block md:w-96">{{ __('Returned Solar Power') }} (kWh):</label>
                 <input id="credit-amount" type="number" name="credit-amount" step="0.01" min="0" placeholder="0" value="{{ old('credit-amount', $values['credit-amount'] ?? 0) }}"
                 class="inline-block grow border-gray-300 focus:border-indigo-300 focus:ring-3 focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-md w-full md:w-[311px]">
             </div>
         </fieldset>
         <fieldset id="tariff02" class="{{ (isset($values) && $values['tariff'] === '02') ? 'block' : 'hidden' }}">
-            <div class="w-100">
+            <div class="w-full">
                     <label for="consumption-standard" class="text-lg font-medium pr-5 w-full block md:inline-block md:w-[495px]">{{ __('Consumption During Standard Period') }} 09:00-23:00 (kWh):</label>
                 <input id="consumption-standard" type="number" name="consumption-standard" step="0.01" min="0" placeholder="0" value="{{ old('consumption-standard', $values['consumption-standard'] ?? 0) }}"
                 class="inline-block grow border-gray-300 focus:border-indigo-300 focus:ring-3 focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-md w-full md:w-[200px]">
             </div>
-            <div class="w-100 py-4">
+            <div class="w-full py-4">
                     <label for="consumption-economy" class="text-lg font-medium pr-4 w-full block md:inline-block md:w-[495px]">{{ __('Consumption During Economy Period') }} 23:00-09:00 (kWh):</label>
                 <input id="consumption-economy" type="number" name="consumption-economy" step="0.01" min="0" placeholder="0" value="{{ old('consumption-economy', $values['consumption-economy'] ?? 0) }}"
                 class="inline-block grow border-gray-300 focus:border-indigo-300 focus:ring-3 focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-md w-full md:w-[200px]">

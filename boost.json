@@ -3,11 +3,17 @@
         "claude_code",
         "gemini"
     ],
-    "editors": [
-        "claude_code",
-        "gemini",
-        "vscode"
+    "guidelines": true,
+    "herd_mcp": false,
+    "mcp": true,
+    "nightwatch_mcp": false,
+    "packages": [
+        "filament/filament"
     ],
-    "guidelines": [],
-    "sail": true
+    "sail": true,
+    "skills": [
+        "livewire-development",
+        "pest-testing",
+        "tailwindcss-development"
+    ]
 }

@@ -8,9 +8,6 @@ use App\Http\Middleware\PreventRequestsDuringMaintenance;
 use Illuminate\Foundation\Http\Middleware\ValidatePostSize;
 use App\Http\Middleware\TrimStrings;
 use Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull;
-use Fahlisaputra\Minify\Middleware\MinifyCss;
-use Fahlisaputra\Minify\Middleware\MinifyJavascript;
-use Fahlisaputra\Minify\Middleware\MinifyHtml;
 use App\Http\Middleware\EncryptCookies;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Session\Middleware\StartSession;
@@ -51,12 +48,6 @@ class Kernel extends HttpKernel
         ValidatePostSize::class,
         TrimStrings::class,
         ConvertEmptyStringsToNull::class,
-         // Middleware to minify html
-        MinifyCss::class,
-        // Middleware to minify css
-        MinifyJavascript::class,
-        // Middleware to minify javascript
-        MinifyHtml::class,
     ];
 
     /**
