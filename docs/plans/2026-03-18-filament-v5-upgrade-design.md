@@ -61,7 +61,7 @@ Key changes this handles:
 - CSS syntax: `@tailwind base/components/utilities` → `@import "tailwindcss"`
 - PostCSS config: `tailwindcss: {}` → `"@tailwindcss/postcss": {}`
 - Vite plugin: add `@tailwindcss/vite` plugin
-- Utility class renames: `shadow-sm` → `shadow-xs`, `rounded-sm` → `rounded-xs`, etc.
+- Utility class renames: `shadow-xs` → `shadow-2xs`, `rounded-xs` → `rounded-xs`, etc.
 - Removed utilities: `bg-opacity-*` → `bg-black/50` style modifiers
 
 Manual checks after the tool:
