@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9ba8d8c71c7146d071ac992e0717b5ca",
+    "content-hash": "5a4bcfec0cc47a5de8bbf90666b96742",
     "packages": [
         {
             "name": "asbiin/laravel-localizer",
